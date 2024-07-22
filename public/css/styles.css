@@ -27,8 +27,7 @@
   box-sizing: border-box;
 }
 
-nav li,
-.hero li {
+ul:not(.reviews ul) li {
   list-style: none;
 }
 
@@ -109,7 +108,7 @@ nav {
 
 nav ul {
   justify-content: center;
-  gap: 1.5rem;
+  gap: .7rem;
 }
 
 nav a {
@@ -252,6 +251,53 @@ section {
   width: 10ch;
 }
 
+/* Classification styles*/
+
+#inv-display {
+  grid-column: 2 / 3;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 1rem;
+}
+
+#inv-display li {
+  justify-self: center;
+
+  padding: 1rem;
+
+  border: 1px solid var(--grey-400);
+  border-radius: .5rem;
+
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+#inv-display img {
+  border-radius: .5rem .5rem 0 0;
+}
+
+#inv-display .namePrice {
+  width: 100%;
+}
+
+.namePrice h2 {
+  width: 15ch;
+
+  margin-bottom: 1rem;
+}
+
+.namePrice span {
+  font-size: larger;
+  font-weight: bold;
+}
+
 /* Footer Styles */
 
 footer {
@@ -263,6 +309,7 @@ footer {
 @media (767px < width) {
   nav ul {
     justify-content: space-evenly;
+    gap: 1.5rem;
   }
 
   main {
@@ -311,6 +358,10 @@ footer {
 
   .upgrades article {
     grid-auto-rows: 8rem;
+  }
+
+  #inv-display {
+    grid-column: 2 / 4;
   }
 }
 
